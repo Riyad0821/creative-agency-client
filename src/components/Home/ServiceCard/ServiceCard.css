@@ -1,0 +1,18 @@
+.info-img{
+    margin:0 auto;
+}
+.service-card{
+    height: 319px;
+    width: 370px;
+}
+.service-container{
+    
+}
+.info-item{
+    margin: 8px;
+}
+.service-card:hover{
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #9E9E9E;
+}
