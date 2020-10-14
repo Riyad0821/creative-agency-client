@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import AdminDashboard from './components/Dashboard/AdminDashboard/AdminDashboard';
+import Order from './components/Dashboard/Order/Order';
 export const UserContext = createContext();
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/aDashboard">
               <AdminDashboard></AdminDashboard>
+            </Route>
+            <Route path="/a">
+              <Order></Order>
             </Route>
             <Route path="/">
               <Home></Home>

@@ -14,13 +14,13 @@ import { faCartPlus, faCommentDots, faListAlt} from '@fortawesome/free-solid-svg
 const UserDashboard = () => {
    
     return (
-        <div >
+        <div className="dash">
             <Router>
                 <SplitPane
                     split="vertical"
                     minSize={100}
                     defaultSize={300}
-                // resizerStyle={styles}
+                    //className="mb-5"
                 >
 
                     <menu>
