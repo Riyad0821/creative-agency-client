@@ -1,12 +1,5 @@
 .carousel-container{
     background-color: rgba(17, 20, 48, 1);
+    padding: 100px;
     height: 724px;
-}
-.carousel{
-    width: 465.49px;
-    height: 334.7px;
-}
-.car-img{
-    width: 465.49px;
-    height: 334.7px;
 }
