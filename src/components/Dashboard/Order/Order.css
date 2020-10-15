@@ -16,3 +16,7 @@
 .user-name{
     padding-left: 800px;
 }
+.price-text{
+    height: 60px !important;
+    width: 284px !important;
+}

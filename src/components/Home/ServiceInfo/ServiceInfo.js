@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ServiceInfo.css';
 import ServiceCard from '../ServiceCard/ServiceCard';
 import service1 from '../../../images/icons/service1.png';
@@ -22,7 +22,27 @@ const serviceData = [
         icon: service3
     }
 ]
+
+
 const ServiceInfo = () => {
+    const [services, setServices] = useState([]);
+
+    // const handleAddServices = () => {
+    //     fetch('http://localhost:5000/addServices', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(serviceData)
+    //     })
+    // }
+    // handleAddServices();
+
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+        .then(res => res.json())
+        .then(data => setServices(data))
+        }, [])
     return (
         <section className="mt-5">
             <div className="service-title text-center mt-5">
@@ -31,7 +51,7 @@ const ServiceInfo = () => {
             <div className="d-flex justify-content-center">
                 <div className="w-75 row mt-5 pt-5">
                     {
-                        serviceData.map(service => <ServiceCard service={service}> </ServiceCard>)
+                        services.map(service => <ServiceCard service={service}> </ServiceCard>)
                     }
                 </div>
             </div>

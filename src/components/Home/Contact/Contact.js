@@ -37,9 +37,9 @@ const Contact = () => {
             />
 
             <textarea
-              className="form-control"
+              className="form-control msg-container"
               name="message"
-              cols="30"
+              cols="40"
               rows="10"
               placeholder="Your message"
             ></textarea>

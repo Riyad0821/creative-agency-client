@@ -1,0 +1,22 @@
+.info-img{
+    margin:0 auto;
+}
+.service-list-card{
+    height: 256px;
+    width: 415px;
+    border-radius: 10px;
+}
+.service-container{
+    
+}
+.info-item{
+    margin: 8px;
+}
+.status-box{
+    margin-left: 200px;
+    height: 40px;
+    width: 108px;
+    background-color: #FFE3E3;
+    color: #FF4545;
+    border-radius: 5px;
+}

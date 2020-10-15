@@ -1,0 +1,12 @@
+.service-list-container{
+    background-color: #E5E5E5;
+    padding-bottom: 300px;
+}
+.list-title{
+    background-color:#E5E5E5;
+    height: 54px;
+    border-radius: 10px;
+}
+.second-layer-container{
+    border-radius: 10px;
+}

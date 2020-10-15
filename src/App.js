@@ -12,6 +12,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import AdminDashboard from './components/Dashboard/AdminDashboard/AdminDashboard';
 import Order from './components/Dashboard/Order/Order';
+import AddService from './components/Dashboard/AddService/AddService';
+import AdminServiceList from './components/Dashboard/AdminServiceList/AdminServiceList';
+import ServiceList from './components/Dashboard/ServiceList/ServiceList';
+import Review from './components/Dashboard/Review/Review';
 export const UserContext = createContext();
 
 function App() {
