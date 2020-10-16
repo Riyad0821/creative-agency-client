@@ -34,36 +34,14 @@ const AdminDashboard = () => {
                         <div className="mx-5 my-3"><Link className="text-dark" to="/makeAdmin"> <FontAwesomeIcon icon={faUserPlus} className="mx-2" />Make Admin</Link></div>
                     </menu>
                     <div>
+                        <Route exact path="/" component={AdminServiceList} />
                         <Route path="/adminServiceList" component={AdminServiceList} />
                         <Route path="/addService" component={AddService} />
                         <Route path="/makeAdmin" component={MakeAdmin} />
+                        
                     </div>
                 </SplitPane>
             </Router>
-            {/* <Container fluid>
-                <Row>
-                    <Col xs={3} id="sidebar-wrapper">
-                        <Nav className="col-md-12 d-none d-md-block bg-light pl-5">
-                            <div className="logo-container">
-                                <img
-                                    src={logo}
-                                    width="200"
-                                    height="60"
-                                    className="logo"
-                                    alt="React Bootstrap logo"
-                                />
-                            </div>
-                            <Link to="/login"><button type="button" class="btn">Order</button></Link>
-                        </Nav>
-                    </Col>
-                    <Col xs={9} id="page-content-wrapper">
-                        this is a test
-                    </Col>
-                </Row>
-
-            </Container> */}
-
-
         </div>
     );
 };

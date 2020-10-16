@@ -49,6 +49,16 @@ const ServiceInfo = () => {
                 <h1 className="title">Provide awesome <span style={{ color: '#7AB259' }}>services</span></h1>
             </div>
             <div className="d-flex justify-content-center">
+                <div>
+                {
+                        services.length===0 &&
+                        <div class="d-flex justify-content-center mt-5">
+                        <div class="spinner-border" role="status"></div>
+                        <strong >Loading...</strong>
+                      </div>
+                        
+                    }
+                </div>
                 <div className="w-75 row mt-5 pt-5">
                     {
                         services.map(service => <ServiceCard service={service}> </ServiceCard>)
