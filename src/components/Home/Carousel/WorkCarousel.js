@@ -10,8 +10,6 @@ import {
 import firstC from '../../../images/carousel-1.png';
 import secondC from '../../../images/carousel-2.png';
 import thirdC from '../../../images/carousel-3.png';
-import fourthC from '../../../images/carousel-4.png';
-import fifthC from '../../../images/carousel-5.png';
 
 const items = [
     {

@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ServiceListInfo.css';
-import icon from '../../../images/icons/service1.png';
+
+import SingleUserList from '../SingleUserList/SingleUserList';
 const ServiceListInfo = () => {
+    const [list, setList] = useState([]);
+    useEffect(() => {
+        fetch('https://guarded-sea-90630.herokuapp.com/orders')
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                setList(data);
+            })
+    }, [])
     return (
-        <div className="col-md-4">
-            <div height="300 " width="415" className="service-list-card p-3  bg-white">
-                <div className="d-flex">
-                <img src={icon} className="info-img info-item" height="74" width="74"  alt=""/>
-                <p className="status-box py-2 px-3 mr-3 mt-2">Pending</p>
-                </div>
-                <h5 className="info-item" height="74" width="74">Web & Mobile design</h5>
-                <p className="info-item" height="74" width="74">We craft stunning and amazing web UI, using a well drafted UX to fit your product</p>
+        <div>
+            <div>
+                {
+                    list.length === 0 &&
+                    <div class="d-flex justify-content-center mt-5">
+                        <div class="spinner-border" role="status"></div>
+                        <strong >Loading...</strong>
+                    </div>
+
+                }
+            </div>
+            <div>
+                {
+                    list.map(item => <SingleUserList item={item} key={item._id}></SingleUserList>)
+                }
             </div>
         </div>
     );

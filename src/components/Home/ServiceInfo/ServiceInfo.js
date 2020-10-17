@@ -28,7 +28,7 @@ const ServiceInfo = () => {
     const [services, setServices] = useState([]);
 
     // const handleAddServices = () => {
-    //     fetch('http://localhost:5000/addServices', {
+    //     fetch('https://guarded-sea-90630.herokuapp.com/addServices', {
     //         method: 'POST',
     //         headers: {
     //             'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const ServiceInfo = () => {
     // handleAddServices();
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://guarded-sea-90630.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setServices(data))
         }, [])
@@ -61,7 +61,7 @@ const ServiceInfo = () => {
                 </div>
                 <div className="w-75 row mt-5 pt-5">
                     {
-                        services.map(service => <ServiceCard service={service}> </ServiceCard>)
+                        services.map(service => <ServiceCard service={service} key={service._id}> </ServiceCard>)
                     }
                 </div>
             </div>

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Col, Container, Row } from 'reactstrap';
 import { UserContext } from '../../../App';
 import AdminDashboard from '../AdminDashboard/AdminDashboard';
 import UserDashboard from '../UserDashboard/UserDashboard';
@@ -9,7 +8,7 @@ const Dashboard = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/checkUser', {
+        fetch('https://guarded-sea-90630.herokuapp.com/checkUser', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -28,7 +27,7 @@ const Dashboard = () => {
     return (
         <div>
             {
-                (isAdmin ? <AdminDashboard></AdminDashboard> : <UserDashboard></UserDashboard>)
+                isAdmin ? <AdminDashboard></AdminDashboard> : <UserDashboard></UserDashboard>
             }
         </div>
     );

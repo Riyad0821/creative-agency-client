@@ -8,6 +8,7 @@ import AdminServiceList from '../AdminServiceList/AdminServiceList';
 import AddService from '../AddService/AddService';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import { faListAlt, faPlus, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import Switch from 'react-bootstrap/esm/Switch';
 const AdminDashboard = () => {
     return (
         <div >
@@ -34,11 +35,11 @@ const AdminDashboard = () => {
                         <div className="mx-5 my-3"><Link className="text-dark" to="/makeAdmin"> <FontAwesomeIcon icon={faUserPlus} className="mx-2" />Make Admin</Link></div>
                     </menu>
                     <div>
-                        <Route exact path="/" component={AdminServiceList} />
-                        <Route path="/adminServiceList" component={AdminServiceList} />
-                        <Route path="/addService" component={AddService} />
-                        <Route path="/makeAdmin" component={MakeAdmin} />
-                        
+                        <Switch>
+                            <Route path="/addService" component={AddService} />
+                            <Route path="/makeAdmin" component={MakeAdmin} />
+                            <Route path="/adminServiceList" component={AdminServiceList} />
+                        </Switch>
                     </div>
                 </SplitPane>
             </Router>

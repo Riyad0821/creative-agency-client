@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'reactstrap';
 import { UserContext } from '../../../App';
 import './Order.css';
 const Order = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
         const [info, setInfo] = useState({});
         const [file, setFile] = useState(null);
         const handleBlur = e => {
@@ -27,7 +27,7 @@ const Order = () => {
             formData.append('projectDetails', info.projectDetails);
             formData.append('price', info.price);
     
-            fetch('http://localhost:5000/addOrder', {
+            fetch('https://guarded-sea-90630.herokuapp.com/addOrder', {
                 method: 'POST',
                 body: formData
             })

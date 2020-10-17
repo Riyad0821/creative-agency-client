@@ -3,7 +3,8 @@ import { UserContext } from '../../../App';
 import ServiceListInfo from '../ServiceListInfo/ServiceListInfo';
 import './ServiceList.css';
 const ServiceList = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
+    
     return (
         <div>
             <div className="title-container d-flex pt-4">
@@ -12,9 +13,7 @@ const ServiceList = () => {
             <h5 className="u-name col-md-3 justify-content-left pr-5">{loggedInUser.name}</h5>
             </div>
             <div className="service-list-container pt-5 pl-3 pr-5">
-                <div className="">
-                        <ServiceListInfo></ServiceListInfo>
-                </div>
+                <ServiceListInfo></ServiceListInfo>
             </div>   
         </div>
     );

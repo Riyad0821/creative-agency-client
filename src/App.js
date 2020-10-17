@@ -2,27 +2,21 @@ import React, { createContext, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
-import AdminDashboard from './components/Dashboard/AdminDashboard/AdminDashboard';
-import Order from './components/Dashboard/Order/Order';
-import AddService from './components/Dashboard/AddService/AddService';
-import AdminServiceList from './components/Dashboard/AdminServiceList/AdminServiceList';
-import ServiceList from './components/Dashboard/ServiceList/ServiceList';
-import Review from './components/Dashboard/Review/Review';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [serviceList, setServiceList] = useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser, serviceList, setServiceList]}>
       <div className="body">
         <Router>
           <Switch>
@@ -32,48 +26,14 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/admin">
-            <AdminDashboard></AdminDashboard>
-            </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <PrivateRoute path="/aDashboard">
-              <AdminDashboard></AdminDashboard>
-            </PrivateRoute>
-            <Route path="/a">
-              <Order></Order>
-            </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home></Home>
             </Route>
           </Switch>
         </Router>
-        {/* <Router>
-          <Switch>
-            <Route path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route> */}
-            {/* <PrivateRoute path="/register/:serviceType">
-              <Register></Register>
-            </PrivateRoute>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-            <Route path="/addItem">
-              <AddItems></AddItems>
-            </Route>
-            <PrivateRoute path="/admin">
-              <Admin></Admin>
-            </PrivateRoute>
-            <Route exact path="/">
-              <Home></Home>
-            </Route> */}
-          {/* </Switch>
-        </Router> */}
       </div>
     </UserContext.Provider>
   );

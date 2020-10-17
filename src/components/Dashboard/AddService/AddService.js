@@ -27,51 +27,51 @@ const AddService = () => {
         formData.append('title', info.title);
         formData.append('description', info.description);
 
-        fetch('http://localhost:5000/addSingleService', {
+        fetch('https://guarded-sea-90630.herokuapp.com/addSingleService', {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(data => {
-                alert('Review Added successfully!');
+                alert('Service Added successfully!');
                 //history.push("/dashboard");
             })
             .catch(error => {
                 console.error(error);
                 alert('Fill all fields properly.');
             })
-            e.preventDefault();
-            e.target.reset();
+        e.preventDefault();
+        e.target.reset();
     }
     return (
         <div>
             <div className="title-container d-flex pt-4">
-            <h4 className="add-service col-md-3">Add Services</h4>
-            <h4 className="col-md-6"></h4>
-            <h5 className="u-name col-md-3 justify-content-left pr-5">{loggedInUser.name}</h5>
+                <h4 className="add-service col-md-3">Add Services</h4>
+                <h4 className="col-md-6"></h4>
+                <h5 className="u-name col-md-3 justify-content-left pr-5">{loggedInUser.name}</h5>
             </div>
             <form onSubmit={handleSubmit} action="" className="form pl-5 pt-5 add-service-container" >
                 <div className="include-btn">
-                    
-            <div className="in-container mr-5 "> 
-                <div className="">
-                    <h6 className="des-label">Service Title</h6>
-                    <input onBlur={handleBlur} name="title" ref={register({ required: true })} placeholder="Enter title" className="in-block" />
-                    {errors.name && <span className="error">Event title is required</span>}
-                    
-                    <h6 className="des-label">Description</h6>
-                    <input onBlur={handleBlur} name="description" className="desc-box" ref={register({ required: true })} placeholder="Enter description" />
-                    {errors.name && <span className="error">Description is required</span>}
+
+                    <div className="in-container mr-5 ">
+                        <div className="">
+                            <h6 className="des-label">Service Title</h6>
+                            <input onBlur={handleBlur} name="title" required placeholder="Enter title" className="in-block" />
+                            {errors.name && <span className="error">Event title is required</span>}
+
+                            <h6 className="des-label">Description</h6>
+                            <input onBlur={handleBlur} name="description" className="desc-box" required placeholder="Enter description" />
+                            {errors.name && <span className="error">Description is required</span>}
+                        </div>
+                        <div className="ml-5">
+                            <h6 className="des-label">Icon</h6>
+                            <input type="file" onChange={handleFileChange} className="file-block" required placeholder="Choose a Image" />
+                            {errors.name && <span className="error">Image is required</span>}
+                        </div>
+                    </div>
+                    <input type="submit" className="submit-btn mr-5" />
                 </div>
-                <div className="ml-5">
-                    <h6 className="des-label">Icon</h6>
-                    <input type="file" onChange={handleFileChange} className="file-block" ref={register({ required: true })} placeholder="Choose a Image" />
-                    {errors.name && <span className="error">Image is required</span>}
-                </div>
-            </div>
-            <input type="submit" className="submit-btn mr-5"/>
-                </div>
-        </form>
+            </form>
         </div>
     );
 };

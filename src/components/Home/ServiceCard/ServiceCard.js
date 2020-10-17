@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ServiceCard.css'
 const ServiceCard = ({service}) => {
     const history = useHistory();
     const handleAddService = (serviceTitle) => {
-        history.push(`/dashboard/$(serviceTitle)`);
+        history.push("/dashboard");
     }
     return (
         <div className="col-md-4 service-container" onClick={() => handleAddService(service.title)}>

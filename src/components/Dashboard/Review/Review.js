@@ -23,7 +23,7 @@ const Review = () => {
         formData.append('description', info.description);
         formData.append('icon', loggedInUser.photo);
 
-        fetch('http://localhost:5000/addSingleReview', {
+        fetch('https://guarded-sea-90630.herokuapp.com/addSingleReview', {
             method: 'POST',
             body: formData
         })
@@ -51,7 +51,7 @@ const Review = () => {
     // const onSubmit = (data) => {
     //     console.log(data);
     //     const reviewDetails = {...data};
-    //     fetch('http://localhost:5000/addSingleReview', {
+    //     fetch('https://guarded-sea-90630.herokuapp.com/addSingleReview', {
     //         method: 'POST',
     //         headers: {
     //             'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const Review = () => {
     return (
         <div>
             <div className="title-container d-flex pt-4">
-            <h4 className="add-service col-md-3">Order</h4>
+            <h4 className="add-service col-md-3">Review</h4>
             <h4 className="col-md-6"></h4>
             <h5 className="u-name col-md-3 justify-content-left pr-5">{loggedInUser.name}</h5>
             </div>

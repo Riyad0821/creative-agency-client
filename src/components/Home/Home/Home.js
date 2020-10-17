@@ -1,5 +1,4 @@
 import React from 'react';
-import Login from '../../Login/Login';
 import WorkCarousel from '../Carousel/WorkCarousel';
 import ClientCompany from '../ClientCompany/ClientCompany';
 import FeedbackInfo from '../FeedbackInfo/FeedbackInfo';

@@ -7,7 +7,7 @@ const AdminServiceList = () => {
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://guarded-sea-90630.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setList(data))
     }, [])
@@ -28,6 +28,16 @@ const AdminServiceList = () => {
                         <div className="col-md-3">Project Details</div>
                         <div className="col-md-2">Status</div>
                     </div>
+                    <div>
+                    {
+                        list.length === 0 &&
+                        <div class="d-flex justify-content-center mt-5">
+                            <div class="spinner-border" role="status"></div>
+                            <strong >Loading...</strong>
+                        </div>
+
+                    }
+                </div>
                     <div>
                         {
                             list.map(item => <AdminServiceListInfo item ={item}></AdminServiceListInfo>)
