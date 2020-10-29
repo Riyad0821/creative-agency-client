@@ -1,5 +1,38 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Creative Agency
+An application used to provide professional services based on user choice.
+## [Live Website] (https://creative-agency-6bd46.web.app/)
+
+## Project Status
+This project is currently in development. Users can place order of professional services like Web development, Web & Mobile design, Graphic design etc. Functionality to sort by additional parameters is in progress.
+
+## Features
+* Responsive single-page web app of online professional services.
+* Authorization for users and admin panel
+* Have different dashboard based on user or admin
+* Client can place order, see details and give reviews
+* Admin can add services, launch a new service, and change service status
+
+## Using Technologies and libraries
+1. React.js
+2. Bootstrap
+3. Firebase Authorization
+4. Firebase Hosting
+5. Heroku Hosting
+3. React-bootstrap
+4. React-router
+5. Reactstrap
+6. React split pane
+7. React-responsive-carousel
+8. React-font-awesome
+9. React-hook
+10. etc
+
+## Project Screen Shot(s)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
